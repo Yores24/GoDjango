@@ -1,0 +1,30 @@
+Isme hum Django seekhre h so kya h django isse hum backend m kaam krskte h 
+app banaskte aur yahi sab
+
+1. "django-admin startproject trydjango" isse humara ek project bnjayega iske andar app banaskte h bridge type ka h 
+2. "python manage.py startapp home" isse humara app bngya home naam ka
+
+views.py m sara logical part aata h data backend se frontend m bhejna h aur yahi sab
+2 types of views class based view and function based view
+
+
+
+
+urls.py - Routing isme krte h 
+
+models.py- schema dikhayenge isme structure wagera
+model banate time Django ek id field automatically add krdeta h acting as a primary key
+
+
+migration.py - yeh humare model ko jo humara database h uske andar register krwata h 
+"python manage.py makemigrations" isse jitne bhi humare model h woh  migration.py m chle jayenge yeh run krne k baad ek 001_initial.py file banata h jisme saari info hoti aur agar koi changes krke firse run
+krte ho toh ek nayi 002_alter<changes>.py file jisme dependencies aur kya update hua woh hota h
+
+"python manage.py migrate" isse database m chle jayenge
+
+Question - if you delete 0001_initial.py toh kya hoga? ans: tab error dega kyuki humare database m bhi yeh parameter h toh woh waha se match krega toh ni milega
+aur 0002 file k dependency bhi 0001 h
+
+"python manage.py migrate" yeh command compare kregi humari database file se ki kya koi changes hue h ya ni aur agar hue h toh unko daal dega yeh pura migrations wala folder run krke match krta h
+
+"python manage.py shell" isse django shell khul jayega fir tum wha bhi kaam krskte ho
