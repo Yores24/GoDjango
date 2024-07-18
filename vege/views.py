@@ -1,5 +1,20 @@
 from django.shortcuts import render,redirect
+from .models import *
 
 # Create your views here.
 def recipe(request):
-    return
+    if request.method=="POST":
+        data=request.POST
+        recipe_name=data.get('recipe_name')
+        recipe_descrip=data.get('recipe_descrip')
+        recipe_image=request.FILES.get('recipe_image')
+        # print(recipe_name)
+        # print(recipe_descrip)
+        # print(recipe_image)
+        Recipe.objects.create(
+            recipe_image=recipe_image,
+            recipe_name=recipe_name,
+            recipe_description=recipe_descrip
+        )
+        return redirect("/recipe")
+    return render(request,"recipe.html")

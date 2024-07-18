@@ -22,6 +22,6 @@ from vege.views import *
 urlpatterns = [
     path('',home,name="home"),
     path("abc/",success_page,name="success_page"),
-    path("recipe/".recipe,name='recipe'),
+    path("recipe/",recipe,name='recipe'),
     path("admin/", admin.site.urls),
 ]
